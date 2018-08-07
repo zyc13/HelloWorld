@@ -30,7 +30,7 @@ class TalkingClock {
     /**
      * Constructs a talking clock
      * @param interval the interval between message(in milliseconds)
-     * @param beep
+     * @param beep true if the clock should beep
      */
     public TalkingClock(int interval, boolean beep) {
         this.interval = interval;
