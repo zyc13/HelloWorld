@@ -1,4 +1,4 @@
-package util5.interfaces;
+package util6.interfaces;
 
 import java.util.Arrays;
 
