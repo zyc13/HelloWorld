@@ -9,7 +9,7 @@ import java.util.Scanner;
 /**
  * This program uses reflection to print all features of a class.
  */
-public class Reflection {
+public class ReflectionTest {
     public static void main(String[] args) {
         // read class name from command line args or user input
         String name;
