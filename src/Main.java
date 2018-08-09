@@ -1,6 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.util.Scanner;
 import java.util.function.IntConsumer;
 
 public class Main {
@@ -13,7 +16,9 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        new Main().r1.run();
-        new Main().r2.run();
+        try (Scanner in = new Scanner(new FileInputStream(""), "UTF-8")) {
+            while (in.hasNext())
+                System.out.println(in.next());
+        }
     }
 }
