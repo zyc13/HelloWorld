@@ -5,6 +5,10 @@ public class Employee implements Comparable<Employee> {
     private String name;
     private double salary;
 
+    public Employee(String name) {
+        this.name = name;
+    }
+
     public Employee(String name, double salary) {
         this.name = name;
         this.salary = salary;
