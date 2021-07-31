@@ -4,10 +4,10 @@ package test;
  * 手写HashMap
  * 定义一个HashMap算法：
  * 	1. 定义数据结构
- * 	2. 定义好一个hash函数
- * 	3. 数据加链表如何操作
+ * 	2. 定义好一个 hash 函数
+ * 	3. 数组加链表如何操作
  * 	4. hashCode冲突是怎么解决的
- *  5. 扩容的时候是怎么解决的
+ * 	5. 扩容的时候是怎么解决的
  * @date 2018.12.10
  */
 public class MyHashMap<K, V> {
@@ -58,27 +58,27 @@ public class MyHashMap<K, V> {
 
     /**
      * 计算hashCode
-     * @param key
-     * @return
+     * @param key 主键
+     * @return 对应的 hash 码
      */
     private int hash(Object key) {
         int h;
+        // TODO 应该把  % initialCapacity 写入一个新的方法：indexFor(hashCode)
         return (key == null) ? 0 : ((h = key.hashCode()) ^ (h >>> 16)) % initialCapacity;
     }
 
     /**
      * put方法
-     * @param key
-     * @param value
-     * @return
+     * @param key 主键
+     * @param value 值
      */
     public void put(K key, V value) {
         if (key == null) {
             return;
         }
         int h = hash(key);
-        Entry<K, V> newEntry = new Entry<>(key, value, null);  // 新put的Entry
-        Entry<K, V> oldEntry = table[h];  // 原hashCode上的旧Entry
+        Entry<K, V> newEntry = new Entry<>(key, value, null);  // 新 put 的 Entry
+        Entry<K, V> oldEntry = table[h];  // 原对应索引上的旧 Entry
 
         while (oldEntry != null) {
             if (key.equals(oldEntry.key)) {
